@@ -1,0 +1,132 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Certificate from "../components/certificate.astro";
+
+const certInfo = [
+    {
+		header: "HarvardX - MCB80.3x",
+		title: "Fundamentals of Neuroscience, Part 3: The Brain",
+		desc: "In this course, we will look at how the various subsystems of the brain work together to enable us to survive and thrive in a changing world.",
+		link: "neuro3.pdf",
+		cert: "Certificate"
+	},
+	{
+		header: "SANS Foundation",
+		title: "GIAC Foundational Cybersecurity Technologies",
+		desc: "GFACT-certified professionals are familiar with practical skills in computers, technology, and security fundamentals that are needed to kickstart a career in cybersecurity.",
+		link: "sans.pdf",
+		cert: "Certificate"
+	},
+	{
+		header: "HarvardX - CS50",
+		title: "CS50’s Web Programming with Python and Javascript",
+		desc: "This course picks up where CS50 leaves off, diving more deeply into the design and implementation of web apps with Python, JavaScript, and SQL using frameworks like Django, React, and Bootstrap.",
+		link: "webProg.pdf",
+		cert: "Certificate"
+	},
+	{
+		header: "HarvardX - MCB80.1x",
+		title: "Fundamentals of Neuroscience, Part 2: Neurons and Networks",
+		desc: "In this course, we examine how neurons pass signals to one another and how complex dynamics can result from just a few neurons arranged in relatively simple circuits.",
+		link: "neuro2.pdf",
+		cert: "Certificate"
+	},
+	{
+		header: "HarvardX - CS50",
+		title: "CS50’s Introduction to Computer Science",
+		desc: "An introduction to the intellectual enterprises of computer science and the art of programming.",
+		link: "CS50.pdf",
+		cert: "Certificate"
+	},
+	{
+		header: "HarvardX - MCB80.1x",
+		title: "Fundamentals of Neuroscience, Part 1: The Electrical Properties of the Neuron",
+		desc: "Join us as we study the electrical properties in individual neurons, building a foundation for understanding the function of the entire nervous system.",
+		link: "neuro1.pdf",
+		cert: "Certificate"
+	},
+	{
+		header: "HarvardX - PH526x",
+		title: "Using Python for Research",
+		desc: "Take your introductory knowledge of Python programming to the next level and learn how to use Python 3 for your research.",
+		link: "pythonResearch.pdf",
+		cert: "Certificate"
+	},
+	{
+		header: "Microsoft - DAT208x",
+		title: "Introduction to Python for Data science",
+		desc: "The ability to analyze data with Python is critical in data science. Learn the basics, and move on to create stunning visualizations.",
+		link: "pythonDataScience.pdf",
+		cert: "Certificate"
+	},
+	{
+		header: "MITx - 14.01x",
+		title: "AP Microeconomics",
+		desc: "An overview of introductory microeconomics. Learn the key principles of economics and how to apply them to the real world - and the AP® exam!",
+		link: "microEcon.pdf",
+		cert: "Certificate"
+	},
+	{
+		header: "BrownX - ENGN101x",
+		title: "Introduction to Engineering and Design",
+		desc: "Learn about the primary fields of engineering and explore the engineering design process, from conceptual design and optimal choice evaluation to prototyping and project construction.",
+		link: "",
+		cert: "No Certificate Avaliable"
+	},
+	{
+		header: "Deeplearning.ai",
+		title: "AI for Everyone",
+		desc: "AI is not only for engineers. If you want your organization to become better at using AI, this is the course to tell everyone--especially your non-technical colleagues--to take.",
+		link: "AIEveryone.pdf",
+		cert: "Certificate"
+	},
+	{
+		header: "Pluralsight",
+		title: "Understanding Machine Learning with Python",
+		desc: "This course will walk you through creating a machine learning prediction solution and will introduce Python, the scikit-learn library, and the Jupyter Notebook environment",
+		link: "",
+		cert: "No Certificate Avaliable"
+	},
+	{
+		header: "Pluralsight",
+		title: "So you want to be a Business Analyst",
+		desc: "This course takes you inside this exciting role, exploring the value business analysts offer to organizations. Learn more about assessing needs, eliciting information, and key tools and traits for success.",
+		link: "",
+		cert: "No Certificate Avaliable"
+	},
+	{
+		header: "Pluralsight",
+		title: "Introduction to Javascript",
+		desc: "JavaScript is the popular programming language which powers web pages and web applications. If you are new to programming or just new to the language, this course will get you started coding in JavaScript.",
+		link: "",
+		cert: "No Certificate Avaliable"
+	},
+	{
+		header: "Pluralsight",
+		title: "Fundamentals of Cloud Computing",
+		desc: "In this course you'll learn the different forms of cloud computing, how they can help you, what makes them so powerful. You'll also learn how to secure your cloud and protect your data in the cloud.",
+		link: "",
+		cert: "No Certificate Avaliable"
+	}
+]
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
+			<h1 style="text-align:center;">Certificates:</h1><br>
+            <div class="grid">
+				{certInfo.map((data) => <Certificate header={data.header} title={data.title} desc={data.desc} link={data.link} cert={data.cert}></Certificate>)}
+            </div>
+		</main>
+		<Footer />
+	</body>
+</html>

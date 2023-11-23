@@ -1,0 +1,154 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Project from "../components/project.astro";
+
+const jsProjects = [
+    {
+        title: "Virus Simulator", 
+        desc:"Interactive simulation showing how different factors influence virus spread", 
+        link:"https://virus-simulation.glitch.me/", 
+        image: "virusSim.png"
+    },
+    {
+        title: "Color Game", 
+        desc:"Game that tricks you mentally through displaying the name of a color in another color", 
+        link:"https://colorgame-ls.glitch.me/", 
+        image:"colorG.png"
+    },
+    {
+        title: "Fractal Design", 
+        desc:"An animated neverending pattern", 
+        link:"https://fractal-baillie.glitch.me/", 
+        image:"fractal.png"
+    },
+    {
+        title: "Munker Illusion", 
+        desc:"Illusion that tricks your eyes as to what color the object you are looking at is", 
+        link:"https://munker-cb.glitch.me/", 
+        image:"munker.png"
+    },
+    {
+        title: "Medical Diagnosis Simulation", 
+        desc:"App to create and play with diagnosis simulations... link coming soon", 
+        link:"", // add medSim to vercel
+        image:"medsim.png"
+    }
+];
+const hackProjects = [
+    {
+        title: "CENOS", 
+        desc:"coming soon", 
+        link:"https://devpost.com/software/chrome-extension-notes-organizer-summarizer-cenos", 
+        image:""
+    },
+    {
+        title: "HIQS", 
+        desc:"coming soon", 
+        link:"", // create own page
+        image:""
+    },
+    {
+        title: "FRI Co-op", 
+        desc:"Website that aims to combat racism by providing 3 key things: a safe community to share thoughts and experiences, education on topics concerning race, and actions taken to fight racism.", 
+        link:"https://devpost.com/software/fri-co-op-24ebs1", 
+        image:""
+    },
+    {
+        title: "Team'n Up", 
+        desc:"Website that helps you find partners for CS-related projects.", 
+        link:"https://devpost.com/software/god-squad-rbtcwp", 
+        image:""
+    },
+    {
+        title: "Voting Webstie", 
+        desc:"Website connecting voters to various resources. Includes a game, a chat, a voting simulator, and a pledge", 
+        link:"https://debatetitlepage.carolinebaillie.repl.co", 
+        image:""
+    },
+    {
+        title: "Carbon Footprint Calculator", 
+        desc:"Calculate your carbon footprint!", 
+        link:"https://woozy-cayenne.glitch.me/", 
+        image:""
+    },
+    {
+        title: "Kid's Environmental Learning Website", 
+        desc:"Webpage teaching kids about differnet environmental aspects (games included!)", 
+        link:"https://edu-awareness-webpage.glitch.me/", 
+        image:""
+    }
+];
+const engProjects = [
+    {
+        title: "Drawing Robot", 
+        desc:"Robot that is programed to draw shapes, letters, and much more!", 
+        link:"https://drawingrobot.glitch.me/", 
+        image:""
+    },
+    {
+        title: "Guitar Strummer", 
+        desc:"Device to electronically stum a guitar... page through astro", 
+        link:"", // create own page
+        image:""
+    },
+    {
+        title: "Text Reader", 
+        desc:"Device helping the visually impaired or those learning to read through vocalizing the text presented in a picture... link through astro", 
+        link:"", // create own page
+        image:""
+    }
+];
+const blogProjects = [
+    {
+        title: "AI, Robotics, and Space", 
+        desc:"A 3 part blog series about the applications of AI nad robotics for space exploration", 
+        link:"https://cabaillie.medium.com", 
+        image:""
+    },
+    {
+        title: "Fish Classification iOS App Tutorial", 
+        desc:"iOS application using SashiDo and Teachable Machine", 
+        link:"https://dev.to/carolinebaillie/fish-classification-ios-app-with-sashido-and-teachable-machine-417i", 
+        image:""
+    },
+    {
+        title: "SnapShot iOS App Tutorial", 
+        desc:"iOS application using SashiDo and Teachable Machine... better description", 
+        link:"https://dev.to/carolinebaillie/snapshot-how-to-create-a-digital-scrapbook-in-ios-part-1-4g2k", 
+        image:""
+    }
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
+			<h1 style="text-align:center;">My Projects!</h1><br>
+            <h2 class="projHead">Javascript Projects:</h2>
+            <div class="grid">
+                {jsProjects.map((data) => <Project title={data.title} desc={data.desc} link={data.link} image={data.image}></Project>)}
+            </div><br>
+            <h2 class="projHead">Hackathon Projects:</h2>
+            <div class="grid">
+                {hackProjects.map((data) => <Project title={data.title} desc={data.desc} link={data.link} image={data.image}></Project>)}
+            </div><br>
+            <h2 class="projHead">Engineering Projects:</h2>
+            <div class="grid">
+                {engProjects.map((data) => <Project title={data.title} desc={data.desc} link={data.link} image={data.image}></Project>)}
+            </div><br>
+            <h2 class="projHead">Writing/Blogs:</h2>
+            <div class="grid">
+                {blogProjects.map((data) => <Project title={data.title} desc={data.desc} link={data.link} image={data.image}></Project>)}
+            </div>
+		</main>
+		<Footer />
+	</body>
+</html>
