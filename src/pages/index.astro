@@ -3,7 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import profilePhoto from "../../public/photo.jpg";
+const profilePhoto = "../../public/photo.jpg";
 ---
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ import profilePhoto from "../../public/photo.jpg";
 	<body>
 		<Header title={SITE_TITLE} />
 		<main>
-			<img style="height:300px; display:block; margin:auto;" src='../../public/photo.jpg'>
+			<img style="height:300px; display:block; margin:auto;" src={profilePhoto}>
 			<p style="text-align:center;">I am a college sophomore at Yale University planning on majoring in Computer Science and Psychology.
 				Outside of my love for tech, CS, and psych I'm passionate about the outdoors (I've been on several 
 				backpacking trips, canoeing trips, and even summitted a 14k mountain in California), traveling (I've been to around
