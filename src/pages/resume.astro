@@ -1,0 +1,23 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import {Content as ResumeContent} from '../components/resume.md';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body style="max-width: 110ch;">
+		<Header title={SITE_TITLE} />
+		<main>
+			<h3 style="text-align:center;">Caroline Baillie</h3>
+            <p style="text-align:center;">caroline.baillie@yale.edu</p>
+            <ResumeContent />
+		</main>
+		<Footer />
+	</body>
+</html>
